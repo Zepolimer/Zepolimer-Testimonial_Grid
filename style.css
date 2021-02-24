@@ -1,0 +1,223 @@
+*,
+*::before,
+*::after {
+    margin: border-box
+}
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/*
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+*/
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.main-container {
+    width: 300px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 425px 240px 225px 370px 438px;
+}
+
+/* CONTAINERS background, radius */
+.container1 {
+    background-color: var(--moderate-violet);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-size: 96px;
+    background-position: top 0px right 22px;
+}
+.container2 {
+    background-color: var(--very-dark-grayish-blue);
+}
+.container3, .container5 {
+    background-color: var(--white);
+}
+.container4 {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.container1, .container2, .container3, .container4, .container5 {
+    border-radius: 10px;
+    padding: 23px 30px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 10px 5px hsla(217, 19%, 35%, 0.295);
+}
+
+/* TEXT */
+.name {
+    font-size: 12px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: -30px;
+}
+.vg {
+    font-size: 10px;
+    color: var(--light-gray);
+}
+
+.title {
+    font-size: 18.5px;
+    color: var(--white);
+    margin: 20px 0px;
+    line-height: 1.4rem;
+}
+.title-black, .name-black {
+    color: var(--very-dark-blackish-blue);
+}
+
+.text {
+    font-size: 12px;
+    color: var(--light-gray);
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+/* PROFILE PICS */
+.pic {
+    width: 26px;
+    border-radius: 25px;
+    position: relative;
+}
+
+
+/* FOOTER */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: var(--moderate-violet); text-decoration: none; }
+
+
+/* TRANSITION between phone & desktop */
+@media (min-width: 700px) {
+    .main-container {
+        width: 600px;
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 245px 180px 50px 425px;
+    }
+
+    .container1 {
+        height: 360px;
+        grid-column: 1;
+        grid-row: 1/2;
+    }
+
+    .container2 {
+        height: 175px;
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .container3 {
+        height: 160px;
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .container4 {
+        height: 325px;
+        grid-row: 4;
+        grid-column: 2;
+    }
+    .container5 {
+        height: 400px;
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .container1, .container2, .container3, .container4, .container5 {
+        border-radius: 10px;
+        padding: 23px 30px;
+        margin: 0px 10px 20px 10px;
+        box-shadow: 10px 10px 10px 5px hsla(217, 19%, 35%, 0.295);
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-container {
+        width: 1140px;
+        margin: 110px auto 60px auto;
+        display: grid;
+        grid-template-columns: 285px 285px 285px 285px;
+        grid-template-rows: 310px 290px;
+    }
+
+
+/* GRID LAYOUT for the containers */
+    .container1, .container2, .container3, .container4, .container5 {
+        border-radius: 10px;
+        padding: 27px 32px;
+    }
+
+    .container1 {
+        width: 480px;
+        height: 230px;
+        grid-row: 1;
+        grid-column: 1/2;
+    }
+    .container2 {
+        height: 230px;
+        grid-row: 1;
+        grid-column: 3;
+    }
+    .container3 {
+        height: 210px;
+        grid-row: 2;
+        grid-column: 1;
+        padding: 27px 40px;
+    }
+    .container4 {
+        width: 490px;
+        height: 210px;
+        grid-row: 2;
+        grid-column: 2/3;
+    }
+    .container5 {
+        height: 515px;
+        grid-row: 1/2;
+        grid-column: 4;
+    }
+
+/* PROFILE PICS */
+.pic {
+    width: 30px;
+}
+
+/* FONT SIZE etc */
+    .name {
+        font-size: 13px;
+        margin-left: 45px;
+        margin-top: -33px;
+    }
+    .vg {
+        font-size: 11px;
+    }
+ 
+    .title {
+        font-size: 20px;
+        color: var(--white);
+        margin: 20px 0px;
+        line-height: 1.45rem;
+    }
+    .title-black, .name-black {
+        color: var(--very-dark-blackish-blue);
+    } 
+    
+    .text {
+        font-size: 13px;
+        line-height: 1.1rem;
+    }
+}
